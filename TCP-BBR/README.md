@@ -2,7 +2,7 @@
 ## Centos 6 下一键安装
 ### 安装
 ```
-wget https://github.com/HMBSbige/MyServer/TCP-BBR/InstallBBRonCentOS6.sh && sh InstallBBRonCentOS6.sh
+wget https://raw.githubusercontent.com/HMBSbige/MyServer/master/TCP-BBR/InstallBBRonCentOS6.sh && sh InstallBBRonCentOS6.sh
 ```
 
 
