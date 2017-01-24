@@ -34,7 +34,7 @@ reboot
 
 ### 安装
 ```
-wget https://github.com/HMBSbige/MyServer/TCP-BBR/linux-image-4.9.0-040900rc8-generic_4.9.0-040900rc8.201612051443_amd64.deb
+wget https://raw.githubusercontent.com/HMBSbige/MyServer/master/TCP-BBR/linux-image-4.9.0-040900rc8-generic_4.9.0-040900rc8.201612051443_amd64.deb
 dpkg -i linux-image-4.9.0*.deb
 ```
 ### 删除其余内核
