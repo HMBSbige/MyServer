@@ -15,8 +15,8 @@ lsmod | grep bbr
 
 ### 更换内核
 ```
-rpm --import https://github.com/HMBSbige/MyServer/TCP-BBR/RPM-GPG-KEY-elrepo.org
-rpm -Uvh https://github.com/HMBSbige/MyServer/TCP-BBR/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+rpm --import https://raw.githubusercontent.com/HMBSbige/MyServer/master/TCP-BBR/RPM-GPG-KEY-elrepo.org
+rpm -Uvh https://raw.githubusercontent.com/HMBSbige/MyServer/master/TCP-BBR/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 yum --enablerepo=elrepo-kernel install kernel-ml -y
 ```
 ### 查看内核是否安装成功
