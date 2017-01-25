@@ -1,5 +1,8 @@
 # 安装ShadowsocksR 服务端
-
+## 一键脚本
+```
+wget --no-check-certificate https://raw.githubusercontent.com/HMBSbige/MyServer/master/ShadowsocksR/ShadowsocksR.sh && ShadowsocksR.sh
+```
 ## 安装所需
 ### Centos
 ```
