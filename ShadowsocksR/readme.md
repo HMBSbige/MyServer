@@ -1,7 +1,20 @@
 # 安装ShadowsocksR 服务端
 ## 一键脚本
+### 安装
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/HMBSbige/MyServer/master/ShadowsocksR/shadowsocksR.sh && sh shadowsocksR.sh
+```
+### 编辑配置文件
+```
+vim /etc/shadowsocks.json
+```
+### 启动、停止、重启、查询状态
+```
+/etc/init.d/shadowsocks start/stop/restart/status
+```
+### 卸载
+```
+sh shadowsocksR.sh uninstall
 ```
 ## 手动安装
 ### 安装所需
