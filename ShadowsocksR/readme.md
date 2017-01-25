@@ -1,66 +1,67 @@
 # 安装ShadowsocksR 服务端
 ## 一键脚本
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/HMBSbige/MyServer/master/ShadowsocksR/ShadowsocksR.sh && ShadowsocksR.sh
+wget --no-check-certificate https://raw.githubusercontent.com/HMBSbige/MyServer/master/ShadowsocksR/shadowsocksR.sh && sh shadowsocksR.sh
 ```
-## 安装所需
-### Centos
+## 手动安装
+### 安装所需
+#### Centos
 ```
 yum install git
 yum install vim
 yum install python-setuptools && easy_install pip
 ```
-### Ubuntu/Debian
+#### Ubuntu/Debian
 ```
 apt-get install git
 apt-get install vim
 apt-get install python-pip
 ```
 
-## 下载
+### 下载
 ```
 git clone -b manyuser https://github.com/HMBSbige/shadowsocksr.git
 ```
 
-## 初始化
+### 初始化
 ```
 cd ~/shadowsocksr
 bash initcfg.sh
 ```
-## 编辑配置文件
+### 编辑配置文件
 
 ```
 vim user-config.json
 ```
 
-## 运行子目录内的server.py
+### 运行子目录内的server.py
 ```
 cd ~/shadowsocksr/shadowsocks
 python server.py
 ```
-## 后台运行：
+### 后台运行：
 ```
 cd ~/shadowsocksr/shadowsocks
 python server.py -d start
 ```
-## 停止/重启：
+### 停止/重启：
 ```
 python server.py -d stop/restart
 ```
-## 查看日志：
+### 查看日志：
 ```
 tail -f /var/log/shadowsocks.log
 ```
-## 更新源代码
-### 进入shadowsocksr目录
+### 更新源代码
+#### 进入shadowsocksr目录
 ```
 cd shadowsocksr
 ```
-### 执行
+#### 执行
 ```
 git pull
 ```
-### 成功后重启ssr服务
+#### 成功后重启ssr服务
 ```
 python server.py -d restart
 ```
