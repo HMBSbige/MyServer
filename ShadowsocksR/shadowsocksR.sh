@@ -110,7 +110,15 @@ get_char(){
     stty echo
     stty $SAVEDSTTY
 }
-
+rand() {
+    index=0
+    str=""
+    for i in {a..z}; do arr[index]=${i}; index=`expr ${index} + 1`; done
+    for i in {A..Z}; do arr[index]=${i}; index=`expr ${index} + 1`; done
+    for i in {0..9}; do arr[index]=${i}; index=`expr ${index} + 1`; done
+    for i in {1..10}; do str="$str${arr[$RANDOM%$index]}"; done
+    echo ${str}
+}
 # Pre-installation settings
 pre_install(){
     if check_sys packageManager yum || check_sys packageManager apt; then
