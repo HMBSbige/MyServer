@@ -124,9 +124,10 @@ pre_install(){
         exit 1
     fi
     # Set ShadowsocksR config password
+    randpassword=`rand`
     echo "请输入ShadowsocksR密码："
-    read -p "(默认密码: 9UdOUXpZbwpmPqf1V1bg):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="9UdOUXpZbwpmPqf1V1bg"
+    read -p "(默认密码: ${randpassword}):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="${randpassword}"
     echo
     echo "---------------------------"
     echo "密码 = ${shadowsockspwd}"
