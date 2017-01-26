@@ -10,7 +10,9 @@ Vultr东京节点-上海电信100M
 http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
 ```
 连接方法 | 单线程平均速度 | 多(32)线程平均速度
----|---|---|
+---|---|---
+L2TP/IPSec|几乎没有速度|16.413KB/S
+L2TP/IPSec+锐速|48.400KB/S|902.368KB/S
 ShadowsocksR|90.769KB/S|2.683MB/S
 ShadowsocksR+TCP-BBR|821.418KB/S|10.162MB/S
 ShadowsocksR+锐速|695.786KB/S|14.434MB/S
