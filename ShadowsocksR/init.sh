@@ -1,4 +1,15 @@
-#!/bin/bash
+#!/bin/sh
+# chkconfig: 2345 90 10
+# description: Start or stop the Shadowsocks R server
+#
+### BEGIN INIT INFO
+# Provides: Shadowsocks-R
+# Required-Start: $network $syslog
+# Required-Stop: $network
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Description: Start or stop the Shadowsocks R server
+### END INIT INFO
 
 NAME=ShadowsocksR
 BIN=/usr/local/shadowsocks/server.py

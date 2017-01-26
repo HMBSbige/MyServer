@@ -16,6 +16,15 @@ vim /etc/shadowsocks.json
 ```
 sh shadowsocksR.sh uninstall
 ```
+### 开机自启动(一键脚本已自动加入)
+#### CentOS/RHEL6 执行:
+```
+chmod 755 /etc/init.d/shadowsocks && chkconfig --add shadowsocks && service shadowsocks start
+```
+#### Ubuntu 14.x，Debian7.x 执行:
+```
+chmod 755 /etc/init.d/shadowsocks ; update-rc.d shadowsocks defaults ; service shadowsocks start
+```
 ## 手动安装
 ### 安装所需
 #### Centos
