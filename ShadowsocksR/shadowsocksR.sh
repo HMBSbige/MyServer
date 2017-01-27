@@ -246,12 +246,12 @@ config_shadowsocks(){
     "port_password":{
         "${shadowsocksport}":"${shadowsockspwd}"  
     },
-    "timeout":300,
+    "timeout":600,
     "method":"rc4-md5",
     "protocol": "auth_sha1_v4_compatible",
     "protocol_param": "",
     "obfs": "tls1.2_ticket_auth_compatible",
-    "obfs_param": "github.com",
+    "obfs_param": "",
     "redirect": "",
     "dns_ipv6": false,
     "fast_open": false,

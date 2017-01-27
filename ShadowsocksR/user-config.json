@@ -4,16 +4,15 @@
     "local_address":"127.0.0.1",
     "local_port":1080,
     "port_password":{
-        "443":"password",
-        "993":"password",
-        "995":"password"
+    	"443":{"password":"abcde", "obfs":"tls1.2_ticket_auth_compatible", "obfs_param":""},
+      "80":{"protocol":"auth_sha1_v2_compatible", "password":"abcde"}
     },
-    "timeout":300,
+    "timeout":600,
     "method":"rc4-md5",
     "protocol": "auth_sha1_v4_compatible",
     "protocol_param": "",
     "obfs": "tls1.2_ticket_auth_compatible",
-    "obfs_param": "github.com",
+    "obfs_param": "",
     "redirect": "",
     "dns_ipv6": false,
     "fast_open": false,
