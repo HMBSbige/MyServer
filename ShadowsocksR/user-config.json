@@ -4,14 +4,14 @@
     "local_address":"127.0.0.1",
     "local_port":1080,
     "port_password":{
-    	"443":{"password":"abcde", "obfs":"tls1.2_ticket_auth_compatible", "obfs_param":""},
-      "80":{"protocol":"auth_sha1_v2_compatible", "password":"abcde"}
+    	"443":{"password":"abcde", "obfs":"tls1.2_ticket_auth", "obfs_param":""},
+      "80":{"protocol":"auth_sha1_v4", "password":"abcde"}
     },
     "timeout":600,
     "method":"rc4-md5",
-    "protocol": "auth_sha1_v4_compatible",
+    "protocol": "auth_chain_a",
     "protocol_param": "",
-    "obfs": "tls1.2_ticket_auth_compatible",
+    "obfs": "tls1.2_ticket_auth",
     "obfs_param": "",
     "redirect": "",
     "dns_ipv6": false,
