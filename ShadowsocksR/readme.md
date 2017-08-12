@@ -2,7 +2,7 @@
 ## 一键脚本
 ### 安装
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/HMBSbige/MyServer/master/ShadowsocksR/shadowsocksR.sh && sh shadowsocksR.sh
+wget --no-check-certificate https://raw.githubusercontent.com/HMBSbige/MyServer/master/ShadowsocksR/shadowsocksR.sh && chmod +x shadowsocksR.sh && ./shadowsocksR.sh
 ```
 ### 编辑配置文件
 ```
