@@ -127,3 +127,44 @@ chkconfig --level 345 iptables on
 service iptables save
 service iptables restart
 ```
+# ShadowsocksR配置参数
+## 加密
+```
+none
+aes-256-cfb
+aes-192-cfb
+aes-128-cfb
+aes-256-cfb8
+aes-192-cfb8
+aes-128-cfb8
+aes-256-ctr
+aes-192-ctr
+aes-128-ctr
+chacha20-ietf
+chacha20
+rc4-md5
+rc4-md5-6
+```
+## 协议
+```
+origin
+verify_deflate
+auth_sha1_v4
+auth_sha1_v4_compatible
+auth_aes128_md5
+auth_aes128_sha1
+auth_chain_a
+auth_chain_b
+```
+## 混淆
+```
+plain
+http_simple
+http_simple_compatible
+http_post
+http_post_compatible
+tls1.2_ticket_auth
+tls1.2_ticket_auth_compatible
+tls1.2_ticket_fastauth
+tls1.2_ticket_fastauth_compatible
+```
