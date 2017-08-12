@@ -79,3 +79,44 @@ net.ipv4.tcp_available_congestion_control = bbr cubic reno
 bbr
 tcp_bbr                16384  0
 ```
+
+## Ubuntu17.04
+
+### 查看当前内核
+```
+uname -r
+```
+内核版本大于等于 Linux 4.9 即可使用BBR
+### 开启TCP-BBR
+```
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+```
+### 保存，生效
+```
+sysctl -p
+```
+显示：
+```
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
+```
+### 检测是否完全生效
+```
+sysctl net.ipv4.tcp_available_congestion_control
+sysctl -n net.ipv4.tcp_congestion_control
+lsmod | grep bbr
+```
+显示：
+```
+net.ipv4.tcp_available_congestion_control = bbr cubic reno
+bbr
+tcp_bbr                20480  1
+```
+### 禁用 BBR
+```
+sed -i '/net\.core\.default_qdisc=fq/d' /etc/sysctl.conf
+sed -i '/net\.ipv4\.tcp_congestion_control=bbr/d' /etc/sysctl.conf
+sysctl -p
+reboot
+```
