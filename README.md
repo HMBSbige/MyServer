@@ -35,3 +35,19 @@ http://releases.ubuntu.com/17.04/ubuntu-17.04-desktop-amd64.iso
 ---|---|---
 ShadowsocksR|3.115MB/S|14.352MB/S
 ShadowsocksR+TCP-BBR|11.594MB/S|14.333MB/S
+
+## 关闭22端口使用密钥来进行登录
+### 修改SSH配置文件
+```
+vim /etc/ssh/sshd_config
+```
+```
+PermitRootLogin yes # 是否允许Root使用SSH登陆
+RSAAuthentication yes # 可能没有
+PubkeyAuthentication yes # 使用密钥登陆
+PasswordAuthentication no # 使用密钥登陆测试成功后再修改
+```
+### 重启SSH服务
+```
+service sshd restart
+```
