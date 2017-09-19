@@ -39,7 +39,7 @@ iptables-save >/etc/iptables.up.rules
 ```
 
 ## 关于Resilio Sync的relay 和 tracker 服务器
-http://config.getsync.com/sync.conf
+https://config.resilio.com/sync.conf
 
 从上面的连接获取官方的IP地址后，用自己的服务器转发
 
