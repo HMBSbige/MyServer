@@ -37,6 +37,13 @@ ShadowsocksR|3.115MB/S|14.352MB/S
 ShadowsocksR+TCP-BBR|11.594MB/S|14.333MB/S
 
 ## 关闭22端口使用密钥来进行登录
+### 设置密钥
+```
+mkdir -p /root/.ssh
+chmod 600 /root/.ssh
+echo ssh-rsa AA... youremail@example.com > /root/.ssh/authorized_keys
+chmod 700 /root/.ssh/authorized_keys
+```
 ### 修改SSH配置文件
 ```
 vim /etc/ssh/sshd_config
