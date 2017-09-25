@@ -17,11 +17,6 @@ iptables -A INPUT -p icmp -m icmp --icmp-type 0 -j ACCEPT
 iptables -A INPUT -p tcp --dport ssh -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A INPUT -p udp --dport 443 -j ACCEPT
-iptables -A INPUT -p tcp --dport 4000 -j ACCEPT
-iptables -A INPUT -p tcp --dport 3000 -j ACCEPT
-iptables -A INPUT -p tcp --dport 3001 -j ACCEPT
-iptables -A INPUT -p udp --dport 3000 -j ACCEPT
-iptables -A INPUT -p udp --dport 3001 -j ACCEPT
 # 保存
 iptables-save >/etc/iptables.up.rules
 ```

@@ -4,8 +4,8 @@
     "local_address":"127.0.0.1",
     "local_port":1080,
     "port_password":{
-    	"443":{"password":"abcde", "obfs":"tls1.2_ticket_auth", "obfs_param":""},
-      "80":{"protocol":"auth_sha1_v4", "password":"abcde"}
+		"443":{"password":"abcde", "obfs":"tls1.2_ticket_auth", "obfs_param":""},
+		"80":{"protocol":"auth_chain_b", "password":"abcde"}
     },
     "timeout":600,
     "method":"rc4-md5",
@@ -15,6 +15,6 @@
     "obfs_param": "",
     "redirect": "",
     "dns_ipv6": false,
-    "fast_open": false,
+    "fast_open": true,
     "workers": 1
 }

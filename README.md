@@ -23,7 +23,7 @@ ShadowsocksR+锐速|695.786KB/S|14.434MB/S
 
 高峰时段用锐速单线程大概300+KB/S，TCP-BBR单线程大概600+KB/S
 
-## 测试
+## 测试2
 
 Vultr西雅图节点-上海电信100M
 
@@ -35,6 +35,8 @@ http://releases.ubuntu.com/17.04/ubuntu-17.04-desktop-amd64.iso
 ---|---|---
 ShadowsocksR|3.115MB/S|14.352MB/S
 ShadowsocksR+TCP-BBR|11.594MB/S|14.333MB/S
+
+~~然而对于电信来说不是CN2线路丢包还是太严重了...~~
 
 ## 关闭22端口使用密钥来进行登录
 ### 设置密钥
