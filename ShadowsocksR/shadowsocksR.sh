@@ -247,12 +247,12 @@ config_shadowsocks(){
         "${shadowsocksport}":"${shadowsockspwd}"
     },
     "timeout":600,
-    "method":"rc4-md5",
+    "method":"none",
     "protocol": "auth_chain_a",
     "protocol_param": "",
-    "obfs": "tls1.2_ticket_auth",
+    "obfs": "tls1.2_ticket_auth_compatible",
     "obfs_param": "",
-    "redirect": "",
+    "redirect": ["steamcommunity.com:443","github.com:443"],
     "dns_ipv6": false,
     "fast_open": true,
     "workers": 1
@@ -296,8 +296,8 @@ install(){
         echo -e "本地 IP: \033[41;37m 127.0.0.1 \033[0m"
         echo -e "本地端口: \033[41;37m 1080 \033[0m"
         echo -e "协议: \033[41;37m auth_chain_a \033[0m"
-        echo -e "混淆: \033[41;37m tls1.2_ticket_auth \033[0m"
-        echo -e "加密方式: \033[41;37m rc4-md5 \033[0m"
+        echo -e "混淆: \033[41;37m tls1.2_ticket_auth_compatible \033[0m"
+        echo -e "加密方式: \033[41;37m none \033[0m"
         echo
     else
         echo "ShadowsocksR安装失败!"
