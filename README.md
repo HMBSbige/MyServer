@@ -43,7 +43,7 @@ ShadowsocksR+TCP-BBR|11.594MB/S|14.333MB/S
 ```
 mkdir -p /root/.ssh
 chmod 600 /root/.ssh
-echo ssh-rsa AA... youremail@example.com > /root/.ssh/authorized_keys
+echo ecdsa-sha2-nistp521 AA... youremail@example.com > /root/.ssh/authorized_keys
 chmod 700 /root/.ssh/authorized_keys
 ```
 ### 修改SSH配置文件
@@ -55,6 +55,7 @@ PermitRootLogin yes # 是否允许Root使用SSH登陆
 RSAAuthentication yes # 可能没有
 PubkeyAuthentication yes # 使用密钥登陆
 PasswordAuthentication no # 使用密钥登陆测试成功后再修改
+ChallengeResponseAuthentication no
 ```
 ### 重启SSH服务
 ```
