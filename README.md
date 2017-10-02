@@ -51,6 +51,7 @@ chmod 700 /root/.ssh/authorized_keys
 vim /etc/ssh/sshd_config
 ```
 ```
+Port 22 # 修改端口
 PermitRootLogin yes # 是否允许Root使用SSH登陆
 RSAAuthentication yes # 可能没有
 PubkeyAuthentication yes # 使用密钥登陆
