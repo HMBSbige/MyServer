@@ -1,20 +1,21 @@
 {
-"server":"0.0.0.0",
-"server_ipv6":"::",
-"local_address":"127.0.0.1",
-"local_port":1080,
-"port_password":{
-"443":{"password":"abcde"},
-"80":{"password":"abcde"}
-},
-"timeout":600,
-"method":"none",
-"protocol": "auth_chain_a",
-"protocol_param": "",
-"obfs": "tls1.2_ticket_auth_compatible",
-"obfs_param": "",
-"redirect": ["steamcommunity.com:443","github.com:443"],
-"dns_ipv6": false,
-"fast_open": true,
-"workers": 1
+		"server":"0.0.0.0",
+		"server_ipv6":"::",
+		"local_address":"127.0.0.1",
+		"local_port":1080,
+		"port_password":{
+				"23333":{"password":"lajigugu","protocol":"origin"},
+				"443":{"password":"lajigugu"},
+				"80":{"password":"lajigugu"}
+		},
+		"timeout":600,
+		"method":"none",
+		"protocol": "auth_chain_a",
+		"protocol_param": "",
+		"obfs": "tls1.2_ticket_auth_compatible",
+		"obfs_param": "",
+		"redirect": ["steamcommunity.com:443","github.com:443"],
+		"dns_ipv6": false,
+		"fast_open": true,
+		"workers": 1
 }
