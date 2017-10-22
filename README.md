@@ -38,6 +38,19 @@ ShadowsocksR+TCP-BBR|11.594MB/S|14.333MB/S
 
 ~~然而对于电信来说不是CN2线路丢包还是太严重了...~~
 
+## 测试3
+搬瓦工CN2-上海电信200M
+
+测试下载
+```
+http://releases.ubuntu.com/17.10/ubuntu-17.10-desktop-amd64.iso
+```
+加密|协议|混淆|多(32)线程下载平均速度
+---|---|---|---
+none|auth_chain_a|tls1.2_ticket_auth|12.5MB/S
+none|auth_chain_a|plain|13.2MB/S
+none|origin|plain|26.9MB/S
+
 ## 关闭22端口使用密钥来进行登录
 ### 设置密钥
 ```
