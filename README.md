@@ -45,11 +45,11 @@ ShadowsocksR+TCP-BBR|11.594MB/S|14.333MB/S
 ```
 http://releases.ubuntu.com/17.10/ubuntu-17.10-desktop-amd64.iso
 ```
-加密|协议|混淆|多(32)线程下载平均速度
+加密|协议|混淆|单线程下载平均速度|多(32)线程下载平均速度
 ---|---|---|---
-none|auth_chain_a|tls1.2_ticket_auth|12.5MB/S
-none|auth_chain_a|plain|13.2MB/S
-none|origin|plain|26.9MB/S
+none|auth_chain_a|tls1.2_ticket_auth|12.7MB/S|15.1MB/S
+none|auth_chain_a|plain|14.9MB/S|15.1MB/S
+none|origin|plain|13.8MB/S|26.9MB/S
 
 ## 关闭22端口使用密钥来进行登录
 ### 设置密钥
