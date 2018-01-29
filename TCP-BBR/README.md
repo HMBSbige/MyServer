@@ -120,3 +120,44 @@ sed -i '/net\.ipv4\.tcp_congestion_control=bbr/d' /etc/sysctl.conf
 sysctl -p
 reboot
 ```
+
+# 内核升级
+
+查看内核版本
+```
+uname -r
+```
+
+## CentOS
+```
+yum --enablerepo=elrepo-kernel -y install kernel-ml kernel-ml-devel
+```
+* CentOS6
+```
+sed -i 's/^default=.*/default=0/g' /boot/grub/grub.conf
+```
+* CentOS7
+```
+grub2-set-default 0
+```
+
+## Debian/Ubuntu
+[下载最新镜像](http://kernel.ubuntu.com/~kernel-ppa/mainline/)
+
+* 如果系统是 64 位，则下载 amd64 的 linux-image 中含有 generic 这个 deb 包
+* 如果系统是 32 位，则下载 i386 的 linux-image 中含有 generic 这个 deb 包
+
+如:
+* 下载
+```
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.15/linux-image-4.15.0-041500-generic_4.15.0-041500.201801282230_amd64.deb
+```
+* 安装
+```
+dpkg -i linux-image-4.15.0-041500-generic_4.15.0-041500.201801282230_amd64.deb
+```
+* 更新 grub 系统引导文件并重启
+```
+update-grub
+reboot
+```
