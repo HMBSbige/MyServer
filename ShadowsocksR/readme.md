@@ -183,3 +183,29 @@ tls1.2_ticket_auth_compatible
 tls1.2_ticket_fastauth
 tls1.2_ticket_fastauth_compatible
 ```
+
+# 监视 shadowsocks 进程
+## 下载脚本并给权限
+```
+wget --no-check-certificate -O /opt/shadowsocks-crond.sh https://raw.githubusercontent.com/HMBSbige/MyServer/master/ShadowsocksR/shadowsocks-crond.sh && chmod 755 /opt/shadowsocks-crond.sh
+```
+
+## 检查 cron 进程
+```
+ps -ef | grep -v grep | grep cron
+```
+
+如不存在就安装
+```
+apt-get install -y cron
+```
+
+## 配置 cron 计划
+```
+(crontab -l ; echo "*/5 * * * * /opt/shadowsocks-crond.sh") | crontab -
+```
+
+## 查看日志
+```
+vim /var/log/shadowsocks-crond.log
+```
