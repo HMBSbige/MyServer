@@ -150,11 +150,11 @@ grub2-set-default 0
 如:
 * 下载
 ```
-wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.15/linux-image-4.15.0-041500-generic_4.15.0-041500.201801282230_amd64.deb
+wget http://kernel.ubuntu.com/%7Ekernel-ppa/mainline/v4.15.10/linux-image-4.15.10-041510-generic_4.15.10-041510.201803152130_amd64.deb
 ```
 * 安装
 ```
-dpkg -i linux-image-4.15.0-041500-generic_4.15.0-041500.201801282230_amd64.deb
+dpkg -i linux-image-4.15.10-041510-generic_4.15.10-041510.201803152130_amd64.deb
 ```
 * 更新 grub 系统引导文件并重启
 ```
