@@ -180,7 +180,7 @@ pre_install(){
 # Download files
 download_files(){
 	# Download libsodium file
-	if ! wget --no-check-certificate -O libsodium-1.0.16.tar.gz https://github.com/jedisct1/libsodium/releases/download/1.0.15/libsodium-1.0.16.tar.gz; then
+	if ! wget --no-check-certificate -O libsodium-1.0.16.tar.gz https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz; then
 		echo "libsodium-1.0.16.tar.gz下载失败!"
 		exit 1
 	fi
