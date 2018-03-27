@@ -180,8 +180,8 @@ pre_install(){
 # Download files
 download_files(){
 	# Download libsodium file
-	if ! wget --no-check-certificate -O libsodium-1.0.15.tar.gz https://github.com/jedisct1/libsodium/releases/download/1.0.15/libsodium-1.0.15.tar.gz; then
-		echo "libsodium-1.0.15.tar.gz下载失败!"
+	if ! wget --no-check-certificate -O libsodium-1.0.16.tar.gz https://github.com/jedisct1/libsodium/releases/download/1.0.15/libsodium-1.0.16.tar.gz; then
+		echo "libsodium-1.0.16.tar.gz下载失败!"
 		exit 1
 	fi
 	# Download ShadowsocksR file
@@ -242,13 +242,13 @@ config_shadowsocks(){
 	"server":"0.0.0.0",
 	"server_ipv6":"::",
 	"local_address":"127.0.0.1",
-	"local_port":1080,
+	"local_port":23333,
 	"port_password":{
 		"${shadowsocksport}":"${shadowsockspwd}"
 	},
 	"timeout":600,
 	"method":"none",
-	"protocol": "auth_chain_a",
+	"protocol": "auth_chain_d",
 	"protocol_param": "",
 	"obfs": "tls1.2_ticket_auth_compatible",
 	"obfs_param": "",
@@ -263,8 +263,8 @@ EOF
 # Install ShadowsocksR
 install(){
 	# Install libsodium
-	tar zxf libsodium-1.0.15.tar.gz
-	cd libsodium-1.0.15
+	tar zxf libsodium-1.0.16.tar.gz
+	cd libsodium-1.0.16
 	./configure && make && make install
 	if [ $? -ne 0 ]; then
 		echo "libsodium安装失败!"
@@ -294,8 +294,8 @@ install(){
 		echo -e "服务器 Port: \033[41;37m ${shadowsocksport} \033[0m"
 		echo -e "密码: \033[41;37m ${shadowsockspwd} \033[0m"
 		echo -e "本地 IP: \033[41;37m 127.0.0.1 \033[0m"
-		echo -e "本地端口: \033[41;37m 1080 \033[0m"
-		echo -e "协议: \033[41;37m auth_chain_a \033[0m"
+		echo -e "本地端口: \033[41;37m 23333 \033[0m"
+		echo -e "协议: \033[41;37m auth_chain_d \033[0m"
 		echo -e "混淆: \033[41;37m tls1.2_ticket_auth_compatible \033[0m"
 		echo -e "加密方式: \033[41;37m none \033[0m"
 		echo
@@ -309,7 +309,7 @@ install(){
 # Install cleanup
 install_cleanup(){
 	cd ${cur_dir}
-	rm -rf manyuser.zip shadowsocks-manyuser libsodium-1.0.15.tar.gz libsodium-1.0.15
+	rm -rf manyuser.zip shadowsocks-manyuser libsodium-1.0.16.tar.gz libsodium-1.0.16
 }
 
 

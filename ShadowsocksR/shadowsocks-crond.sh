@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-name=ShadowsocksRR
+name=ShadowsocksR
 path=/var/log
 [[ ! -d ${path} ]] && mkdir -p ${path}
 log=${path}/shadowsocks-crond.log

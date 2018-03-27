@@ -1,5 +1,7 @@
 # 自用服务器设置
-谢谢91yun，breakwa11，Google等
+谢谢 Teddy Sun，breakwa11，Google 等
+
+[免费 ss](https://get.freess.today/)
 
 ## 测试
 
@@ -43,7 +45,7 @@ ShadowsocksR+TCP-BBR|11.594MB/S|14.333MB/S
 
 测试下载
 ```
-http://releases.ubuntu.com/17.10/ubuntu-17.10-desktop-amd64.iso
+http://releases.ubuntu.com/17.10.1/ubuntu-17.10.1-desktop-amd64.iso
 ```
 加密|协议|混淆|单线程下载平均速度|多(32)线程下载平均速度
 ---|---|---|---|---
