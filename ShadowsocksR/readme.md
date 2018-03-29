@@ -1,4 +1,13 @@
 # 安装ShadowsocksR 服务端
+## [Docker](https://github.com/HMBSbige/shadowsocksr-docker)
+```
+curl -sSL https://get.docker.com/ | sh
+service docker start
+docker pull hmbsbige/shadowsocksr-docker:0.1
+docker run -d -p 80:80 -e "PASSWORD=lajigugu"  hmbsbige/shadowsocksr-docker:0.1
+docker run -d -p 443:80 -e "PASSWORD=lajigugu" -e "PROTOCOL=auth_chain_a" hmbsbige/shadowsocksr-docker:0.1
+```
+
 ## 一键脚本
 ### 安装
 ```
@@ -14,7 +23,7 @@ vim /etc/shadowsocks.json
 ```
 ### 卸载
 ```
-sh shadowsocksR.sh uninstall
+./shadowsocksR.sh uninstall
 ```
 ### 开机自启动(一键脚本已自动加入)
 #### CentOS/RHEL6 执行:
