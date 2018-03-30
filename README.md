@@ -3,7 +3,7 @@
 
 [免费 ss](https://get.freess.today/)
 
-## 测试
+## 测试1
 
 Vultr东京节点-上海电信100M
 
@@ -53,6 +53,28 @@ none|auth_chain_a|tls1.2_ticket_auth|12.7MB/S|15.1MB/S
 none|auth_chain_a|plain|14.9MB/S|15.1MB/S
 none|origin|plain|13.8MB/S|26.9MB/S
 
+# **👆以上测试已经过时**
+
+## 测试4
+Vultr2-上海电信200M(Only IPv4)
+
+测试地址
+
+https://fast.com/
+
+ID|地理位置|网际协议(IP)版本|平均延迟（ms）|丢包率（%）|下行速度
+---|---|---|---|---|---
+1|法兰克福|4|201|0|240Mbps
+2|法兰克福|6|275|33|170Kbps
+3|法兰克福|6|293|25|97Kbps
+4|法兰克福|6|285|31|250Kbps
+5|洛杉矶|4|160|0|50Mbps
+6|洛杉矶|6|269|6|2.1Mbps
+7|洛杉矶|6|279|14|3Mbps
+8|洛杉矶|6|279|6|2.6Mbps
+
+高峰期测 IPv6 速度好慢，闲时测跟 IPv4 差不多的
+
 ## 关闭22端口使用密钥来进行登录
 ### 设置密钥
 ```
@@ -76,4 +98,42 @@ ChallengeResponseAuthentication no
 ### 重启SSH服务
 ```
 service sshd restart
+```
+
+## Ubuntu 17.10 x64 启用多个 IPv6 地址
+### 更改 hostname
+```
+hostnamectl set-hostname $hostname
+```
+
+### 安装 ifupdown (Ubuntu 17.10 默认没有)
+```
+apt-get install ifupdown
+```
+
+### 修改配置文件
+```
+vim /etc/network/interfaces
+```
+格式像下面这样
+```
+auto lo
+iface lo inet loopback
+
+auto $IFACE
+iface $IFACE inet6 static
+address $IPv6_Addr0
+netmask $Netmask
+gateway $Gateway
+# UP
+up ip -6 addr add dev $IFACE $IPv6_Addr1
+up ip -6 addr add dev $IFACE $IPv6_Addr2
+# DOWN
+down ip -6 addr del dev $IFACE $IPv6_Addr1
+down ip -6 addr del dev $IFACE $IPv6_Addr2
+```
+
+### 重启服务
+```
+service networking restart
 ```
