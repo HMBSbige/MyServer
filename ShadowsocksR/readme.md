@@ -3,9 +3,9 @@
 ```
 curl -sSL https://get.docker.com/ | sh
 service docker start
-docker pull hmbsbige/shadowsocksr-docker:0.1
-docker run -d -p 80:80 -e "PASSWORD=lajigugu"  hmbsbige/shadowsocksr-docker:0.1
-docker run -d -p 443:80 -e "PASSWORD=lajigugu" -e "PROTOCOL=auth_chain_a" hmbsbige/shadowsocksr-docker:0.1
+docker pull hmbsbige/shadowsocksr-docker:latest
+docker run --restart=always --name ssr -d -p 443:80 -e "PASSWORD=psw"  hmbsbige/shadowsocksr-docker:latest
+docker run --restart=always --name ss -d -p 80:80 -e "PASSWORD=psw" -e "METHOD=chacha20-ietf" -e "PROTOCOL=origin" hmbsbige/shadowsocksr-docker:latest
 ```
 
 ## 一键脚本
