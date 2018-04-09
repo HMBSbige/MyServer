@@ -1,13 +1,22 @@
 # 安装ShadowsocksR 服务端
 ## [Docker](https://github.com/HMBSbige/shadowsocksr-docker)
+### 安装并启动 Docker
 ```
 curl -sSL https://get.docker.com/ | sh
 service docker start
+```
+### 拉取并启动
+```
 docker pull hmbsbige/shadowsocksr-docker:latest
 docker run --restart=always --name ssr -d -p 443:80 -e "PASSWORD=psw"  hmbsbige/shadowsocksr-docker:latest
 docker run --restart=always --name ss -d -p 80:80 -e "PASSWORD=psw" -e "METHOD=chacha20-ietf" -e "PROTOCOL=origin" hmbsbige/shadowsocksr-docker:latest
 ```
-
+### 用配置文件启动
+假设配置文件在```~/ssconfig/1.json```
+```
+docker pull hmbsbige/shadowsocksr-docker:config
+docker run --restart=always --name=ssr --dns 1.1.1.1 --dns 8.8.8.8 -v ~/ssconfig:/ssconfig:ro -e "CONFDIR=/ssconfig" -e "CONF=1.json" --expose=80 --expose=443 --expose=993 --expose=23333 -p 80:80 -p 443:443 -p 993:993 -p 23333:23333 -d hmbsbige/shadowsocksr-docker:config
+```
 ## 一键脚本
 ### 安装
 ```
