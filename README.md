@@ -101,40 +101,37 @@ ChallengeResponseAuthentication no
 service sshd restart
 ```
 
-## Ubuntu 17.10 x64 启用多个 IPv6 地址
+## Ubuntu 18.04 启用多个 IP 地址
 ### 更改 hostname
 ```
 hostnamectl set-hostname $hostname
 ```
 
-### 安装 ifupdown (Ubuntu 17.10 默认没有)
-```
-apt-get install ifupdown
-```
-
 ### 修改配置文件
 ```
-vim /etc/network/interfaces
+vim /etc/netplan/10-ens3.yaml
 ```
+根据自己的网络，修改`10-ens3.yaml`
+
 格式像下面这样
 ```
-auto lo
-iface lo inet loopback
-
-auto $IFACE
-iface $IFACE inet6 static
-address $IPv6_Addr0
-netmask $Netmask
-gateway $Gateway
-# UP
-up ip -6 addr add dev $IFACE $IPv6_Addr1
-up ip -6 addr add dev $IFACE $IPv6_Addr2
-# DOWN
-down ip -6 addr del dev $IFACE $IPv6_Addr1
-down ip -6 addr del dev $IFACE $IPv6_Addr2
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens3:
+      dhcp4: no
+      addresses: [$IP1/$CIDR1,$IP2/$CIDR2,'$IPv6/$Netmask']
+      gateway4: $Gateway4
+      nameservers:
+        addresses: [$DNS]
+      routes:
+      - to: 169.254.0.0/16
+        via: $Gateway4
+        metric: 100
 ```
 
-### 重启服务
+### 应用
 ```
-service networking restart
+netplan apply
 ```
