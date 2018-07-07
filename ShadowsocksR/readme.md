@@ -15,7 +15,7 @@ docker run --restart=always --name ss -d -p 80:80 -e "PASSWORD=psw" -e "METHOD=c
 假设配置文件在```~/ssconfig/1.json```
 ```
 docker pull hmbsbige/shadowsocksr-docker:config
-docker run --restart=always --name=ssr --dns 1.1.1.1 --dns 8.8.8.8 -v ~/ssconfig:/ssconfig:ro -e "CONFDIR=/ssconfig" -e "CONF=1.json" --expose=80 --expose=443 --expose=993 --expose=23333 -p 80:80 -p 443:443 -p 993:993 -p 23333:23333 -d hmbsbige/shadowsocksr-docker:config
+docker run --restart=always --name=ssr --dns 1.1.1.1 --dns 8.8.8.8 -v ~/ssconfig:/ssconfig:ro -e "CONFDIR=/ssconfig" -e "CONF=1.json" -p 80:80 -p 443:443 -p 993:993 -p 23333:23333 -d hmbsbige/shadowsocksr-docker:config
 ```
 ## 一键脚本
 ### 安装
