@@ -62,3 +62,10 @@ network:
 ```
 netplan apply
 ```
+
+### 正确结果
+```
+ip address list
+```
+
+在en3中看到两个inet
